@@ -66,16 +66,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -87,6 +88,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -120,18 +132,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -194,21 +194,6 @@ rosgraph_msgs_generate_messages_eus: detect_hog/CMakeFiles/rosgraph_msgs_generat
 rosgraph_msgs_generate_messages_eus/fast:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 detect_hog/CMakeFiles/roscpp_generate_messages_py.dir/rule:
@@ -346,21 +331,6 @@ roscpp_generate_messages_nodejs/fast:
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
-detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
 detect_hog/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : detect_hog/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
@@ -405,6 +375,66 @@ std_msgs_generate_messages_lisp/fast:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make detect_hog/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
+# Convenience name for target.
+detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_nodejs: detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+detect_hog/CMakeFiles/detect_hog2_node.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog2_node.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog2_node.dir/rule
+
+# Convenience name for target.
+detect_hog2_node: detect_hog/CMakeFiles/detect_hog2_node.dir/rule
+
+.PHONY : detect_hog2_node
+
+# fast build rule for target.
+detect_hog2_node/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/build
+.PHONY : detect_hog2_node/fast
+
+# Convenience name for target.
+detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+.PHONY : detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+detect_hog/CMakeFiles/detect_hog3_node.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog3_node.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog3_node.dir/rule
+
+# Convenience name for target.
+detect_hog3_node: detect_hog/CMakeFiles/detect_hog3_node.dir/rule
+
+.PHONY : detect_hog3_node
+
+# fast build rule for target.
+detect_hog3_node/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/build
+.PHONY : detect_hog3_node/fast
+
 src/detect.o: src/detect.cpp.o
 
 .PHONY : src/detect.o
@@ -432,6 +462,60 @@ src/detect.cpp.s:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_node.dir/build.make detect_hog/CMakeFiles/detect_hog_node.dir/src/detect.cpp.s
 .PHONY : src/detect.cpp.s
 
+src/detect2.o: src/detect2.cpp.o
+
+.PHONY : src/detect2.o
+
+# target to build an object file
+src/detect2.cpp.o:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/src/detect2.cpp.o
+.PHONY : src/detect2.cpp.o
+
+src/detect2.i: src/detect2.cpp.i
+
+.PHONY : src/detect2.i
+
+# target to preprocess a source file
+src/detect2.cpp.i:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/src/detect2.cpp.i
+.PHONY : src/detect2.cpp.i
+
+src/detect2.s: src/detect2.cpp.s
+
+.PHONY : src/detect2.s
+
+# target to generate assembly for a file
+src/detect2.cpp.s:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/src/detect2.cpp.s
+.PHONY : src/detect2.cpp.s
+
+src/detect3.o: src/detect3.cpp.o
+
+.PHONY : src/detect3.o
+
+# target to build an object file
+src/detect3.cpp.o:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/src/detect3.cpp.o
+.PHONY : src/detect3.cpp.o
+
+src/detect3.i: src/detect3.cpp.i
+
+.PHONY : src/detect3.i
+
+# target to preprocess a source file
+src/detect3.cpp.i:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/src/detect3.cpp.i
+.PHONY : src/detect3.cpp.i
+
+src/detect3.s: src/detect3.cpp.s
+
+.PHONY : src/detect3.s
+
+# target to generate assembly for a file
+src/detect3.cpp.s:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/src/detect3.cpp.s
+.PHONY : src/detect3.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -439,13 +523,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... rebuild_cache"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... edit_cache"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... detect_hog_node"
-	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
@@ -454,16 +538,24 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... test"
-	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... detect_hog2_node"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... detect_hog3_node"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... install"
 	@echo "... src/detect.o"
 	@echo "... src/detect.i"
 	@echo "... src/detect.s"
+	@echo "... src/detect2.o"
+	@echo "... src/detect2.i"
+	@echo "... src/detect2.s"
+	@echo "... src/detect3.o"
+	@echo "... src/detect3.i"
+	@echo "... src/detect3.s"
 .PHONY : help
 
 

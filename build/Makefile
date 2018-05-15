@@ -283,19 +283,6 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_nodejs
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_nodejs
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named roscpp_generate_messages_py
 
 # Build rule for target.
@@ -413,19 +400,6 @@ roscpp_generate_messages_nodejs/fast:
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named std_msgs_generate_messages_nodejs
-
-# Build rule for target.
-std_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named roscpp_generate_messages_lisp
 
 # Build rule for target.
@@ -463,6 +437,58 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 std_msgs_generate_messages_lisp/fast:
 	$(MAKE) -f detect_hog/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make detect_hog/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_nodejs
+
+# Build rule for target.
+std_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named detect_hog2_node
+
+# Build rule for target.
+detect_hog2_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect_hog2_node
+.PHONY : detect_hog2_node
+
+# fast build rule for target.
+detect_hog2_node/fast:
+	$(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/build
+.PHONY : detect_hog2_node/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_nodejs
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_nodejs
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named detect_hog3_node
+
+# Build rule for target.
+detect_hog3_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect_hog3_node
+.PHONY : detect_hog3_node
+
+# fast build rule for target.
+detect_hog3_node/fast:
+	$(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/build
+.PHONY : detect_hog3_node/fast
 
 #=============================================================================
 # Target rules for targets named detect_hog_2_node
@@ -512,7 +538,6 @@ help:
 	@echo "... gtest_main"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... detect_hog_node"
 	@echo "... roscpp_generate_messages_cpp"
@@ -522,10 +547,13 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_lisp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... detect_hog2_node"
+	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... detect_hog3_node"
 	@echo "... detect_hog_2_node"
 	@echo "... detect_hog_3_node"
 .PHONY : help

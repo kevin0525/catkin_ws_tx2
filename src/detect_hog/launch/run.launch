@@ -1,0 +1,8 @@
+<launch>
+<group ns="detect">
+<node pkg = "detect_hog" name="detect1" type="detect_hog_node"/>
+<node pkg = "detect_hog" name="detect2" type="detect_hog2_node"/>
+<node pkg = "detect_hog" name="detect3" type="detect_hog3_node"/>
+</group>
+</launch>
+

@@ -27,3 +27,16 @@ target_link_libraries(${PROJECT_NAME}_node
   ${OpenCV_LIBS}
 )
 
+add_executable(${PROJECT_NAME}2_node src/detect2.cpp)
+
+target_link_libraries(${PROJECT_NAME}2_node
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+)
+
+add_executable(${PROJECT_NAME}3_node src/detect3.cpp)
+
+target_link_libraries(${PROJECT_NAME}3_node
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+)
