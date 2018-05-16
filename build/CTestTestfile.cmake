@@ -6,5 +6,3 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
 subdirs(detect_hog)
-subdirs(detect_hog_2)
-subdirs(detect_hog_3)

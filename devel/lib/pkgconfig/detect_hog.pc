@@ -3,6 +3,6 @@ prefix=/home/nvidia/catkin_tx2/devel
 Name: detect_hog
 Description: Description of detect_hog
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/nvidia/catkin_tx2/devel/include
 Libs: -L/home/nvidia/catkin_tx2/devel/lib 
-Requires: 
+Requires: message_runtime

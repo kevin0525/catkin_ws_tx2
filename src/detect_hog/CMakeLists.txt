@@ -6,10 +6,22 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  message_generation
 )
 find_package(OpenCV REQUIRED)
 
+add_message_files(
+  FILES
+  RobotCamPos.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+
 catkin_package(
+  CATKIN_DEPENDS message_runtime
 )
 
 include_directories(

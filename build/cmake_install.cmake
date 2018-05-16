@@ -118,8 +118,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/nvidia/catkin_tx2/build/gtest/cmake_install.cmake")
   include("/home/nvidia/catkin_tx2/build/detect_hog/cmake_install.cmake")
-  include("/home/nvidia/catkin_tx2/build/detect_hog_2/cmake_install.cmake")
-  include("/home/nvidia/catkin_tx2/build/detect_hog_3/cmake_install.cmake")
 
 endif()
 

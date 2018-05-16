@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/nvidia/catkin_tx2/devel/include/detect_hog/RobotCamPos.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /home/nvidia/catkin_tx2/src/detect_hog/src/detect.cpp
 ros/ros.h
 /home/nvidia/catkin_tx2/src/detect_hog/src/ros/ros.h
@@ -36,6 +52,8 @@ algorithm
 opencv2/highgui/highgui.hpp
 -
 dirent.h
+-
+detect_hog/RobotCamPos.h
 -
 
 /opt/ros/kinetic/include/opencv-3.3.1/opencv/cxcore.h
