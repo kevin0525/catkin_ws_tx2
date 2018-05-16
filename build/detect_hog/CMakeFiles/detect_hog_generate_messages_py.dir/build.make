@@ -53,21 +53,29 @@ CMAKE_BINARY_DIR = /home/nvidia/catkin_tx2/build
 # Include the progress variables for this target.
 include detect_hog/CMakeFiles/detect_hog_generate_messages_py.dir/progress.make
 
+detect_hog/CMakeFiles/detect_hog_generate_messages_py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamGlobalPos.py
 detect_hog/CMakeFiles/detect_hog_generate_messages_py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamPos.py
 detect_hog/CMakeFiles/detect_hog_generate_messages_py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/__init__.py
 
 
+/home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamGlobalPos.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamGlobalPos.py: /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG detect_hog/RobotCamGlobalPos"
+	cd /home/nvidia/catkin_tx2/build/detect_hog && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg -Idetect_hog:/home/nvidia/catkin_tx2/src/detect_hog/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p detect_hog -o /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg
+
 /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamPos.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamPos.py: /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG detect_hog/RobotCamPos"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG detect_hog/RobotCamPos"
 	cd /home/nvidia/catkin_tx2/build/detect_hog && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg -Idetect_hog:/home/nvidia/catkin_tx2/src/detect_hog/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p detect_hog -o /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg
 
 /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/__init__.py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamGlobalPos.py
 /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/__init__.py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamPos.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for detect_hog"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for detect_hog"
 	cd /home/nvidia/catkin_tx2/build/detect_hog && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg --initpy
 
 detect_hog_generate_messages_py: detect_hog/CMakeFiles/detect_hog_generate_messages_py
+detect_hog_generate_messages_py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamGlobalPos.py
 detect_hog_generate_messages_py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/_RobotCamPos.py
 detect_hog_generate_messages_py: /home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages/detect_hog/msg/__init__.py
 detect_hog_generate_messages_py: detect_hog/CMakeFiles/detect_hog_generate_messages_py.dir/build.make

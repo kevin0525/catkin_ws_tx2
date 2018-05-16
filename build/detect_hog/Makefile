@@ -78,17 +78,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -133,6 +122,17 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/nvidia/catkin_tx2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/nvidia/catkin_tx2/build/CMakeFiles /home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/progress.marks
@@ -164,6 +164,21 @@ preinstall/fast:
 depend:
 	cd /home/nvidia/catkin_tx2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+detect_hog/CMakeFiles/detect_hog_right.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_right.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog_right.dir/rule
+
+# Convenience name for target.
+detect_hog_right: detect_hog/CMakeFiles/detect_hog_right.dir/rule
+
+.PHONY : detect_hog_right
+
+# fast build rule for target.
+detect_hog_right/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_right.dir/build.make detect_hog/CMakeFiles/detect_hog_right.dir/build
+.PHONY : detect_hog_right/fast
 
 # Convenience name for target.
 detect_hog/CMakeFiles/detect_hog_generate_messages_py.dir/rule:
@@ -211,6 +226,21 @@ detect_hog_genlisp/fast:
 .PHONY : detect_hog_genlisp/fast
 
 # Convenience name for target.
+detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+detect_hog_generate_messages_lisp: detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
+
+.PHONY : detect_hog_generate_messages_lisp
+
+# fast build rule for target.
+detect_hog_generate_messages_lisp/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/build.make detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/build
+.PHONY : detect_hog_generate_messages_lisp/fast
+
+# Convenience name for target.
 detect_hog/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : detect_hog/CMakeFiles/std_msgs_generate_messages_py.dir/rule
@@ -239,21 +269,6 @@ detect_hog_generate_messages_cpp: detect_hog/CMakeFiles/detect_hog_generate_mess
 detect_hog_generate_messages_cpp/fast:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_generate_messages_cpp.dir/build.make detect_hog/CMakeFiles/detect_hog_generate_messages_cpp.dir/build
 .PHONY : detect_hog_generate_messages_cpp/fast
-
-# Convenience name for target.
-detect_hog/CMakeFiles/detect_hog_node.dir/rule:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_node.dir/rule
-.PHONY : detect_hog/CMakeFiles/detect_hog_node.dir/rule
-
-# Convenience name for target.
-detect_hog_node: detect_hog/CMakeFiles/detect_hog_node.dir/rule
-
-.PHONY : detect_hog_node
-
-# fast build rule for target.
-detect_hog_node/fast:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_node.dir/build.make detect_hog/CMakeFiles/detect_hog_node.dir/build
-.PHONY : detect_hog_node/fast
 
 # Convenience name for target.
 detect_hog/CMakeFiles/roscpp_generate_messages_py.dir/rule:
@@ -286,19 +301,19 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-detect_hog/CMakeFiles/detect_hog3_node.dir/rule:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog3_node.dir/rule
-.PHONY : detect_hog/CMakeFiles/detect_hog3_node.dir/rule
+detect_hog/CMakeFiles/detect_hog_left.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_left.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog_left.dir/rule
 
 # Convenience name for target.
-detect_hog3_node: detect_hog/CMakeFiles/detect_hog3_node.dir/rule
+detect_hog_left: detect_hog/CMakeFiles/detect_hog_left.dir/rule
 
-.PHONY : detect_hog3_node
+.PHONY : detect_hog_left
 
 # fast build rule for target.
-detect_hog3_node/fast:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/build
-.PHONY : detect_hog3_node/fast
+detect_hog_left/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_left.dir/build.make detect_hog/CMakeFiles/detect_hog_left.dir/build
+.PHONY : detect_hog_left/fast
 
 # Convenience name for target.
 detect_hog/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
@@ -359,21 +374,6 @@ roscpp_generate_messages_eus: detect_hog/CMakeFiles/roscpp_generate_messages_eus
 roscpp_generate_messages_eus/fast:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/roscpp_generate_messages_eus.dir/build.make detect_hog/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-detect_hog/CMakeFiles/detect_hog2_node.dir/rule:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog2_node.dir/rule
-.PHONY : detect_hog/CMakeFiles/detect_hog2_node.dir/rule
-
-# Convenience name for target.
-detect_hog2_node: detect_hog/CMakeFiles/detect_hog2_node.dir/rule
-
-.PHONY : detect_hog2_node
-
-# fast build rule for target.
-detect_hog2_node/fast:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/build
-.PHONY : detect_hog2_node/fast
 
 # Convenience name for target.
 detect_hog/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
@@ -541,6 +541,21 @@ detect_hog_generate_messages/fast:
 .PHONY : detect_hog_generate_messages/fast
 
 # Convenience name for target.
+detect_hog/CMakeFiles/detect_hog_back.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_back.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog_back.dir/rule
+
+# Convenience name for target.
+detect_hog_back: detect_hog/CMakeFiles/detect_hog_back.dir/rule
+
+.PHONY : detect_hog_back
+
+# fast build rule for target.
+detect_hog_back/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_back.dir/build.make detect_hog/CMakeFiles/detect_hog_back.dir/build
+.PHONY : detect_hog_back/fast
+
+# Convenience name for target.
 detect_hog/CMakeFiles/detect_hog_gencpp.dir/rule:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_gencpp.dir/rule
 .PHONY : detect_hog/CMakeFiles/detect_hog_gencpp.dir/rule
@@ -554,6 +569,36 @@ detect_hog_gencpp: detect_hog/CMakeFiles/detect_hog_gencpp.dir/rule
 detect_hog_gencpp/fast:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_gencpp.dir/build.make detect_hog/CMakeFiles/detect_hog_gencpp.dir/build
 .PHONY : detect_hog_gencpp/fast
+
+# Convenience name for target.
+detect_hog/CMakeFiles/_detect_hog_generate_messages_check_deps_RobotCamGlobalPos.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/_detect_hog_generate_messages_check_deps_RobotCamGlobalPos.dir/rule
+.PHONY : detect_hog/CMakeFiles/_detect_hog_generate_messages_check_deps_RobotCamGlobalPos.dir/rule
+
+# Convenience name for target.
+_detect_hog_generate_messages_check_deps_RobotCamGlobalPos: detect_hog/CMakeFiles/_detect_hog_generate_messages_check_deps_RobotCamGlobalPos.dir/rule
+
+.PHONY : _detect_hog_generate_messages_check_deps_RobotCamGlobalPos
+
+# fast build rule for target.
+_detect_hog_generate_messages_check_deps_RobotCamGlobalPos/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/_detect_hog_generate_messages_check_deps_RobotCamGlobalPos.dir/build.make detect_hog/CMakeFiles/_detect_hog_generate_messages_check_deps_RobotCamGlobalPos.dir/build
+.PHONY : _detect_hog_generate_messages_check_deps_RobotCamGlobalPos/fast
+
+# Convenience name for target.
+detect_hog/CMakeFiles/detect_hog_globalPos.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_globalPos.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog_globalPos.dir/rule
+
+# Convenience name for target.
+detect_hog_globalPos: detect_hog/CMakeFiles/detect_hog_globalPos.dir/rule
+
+.PHONY : detect_hog_globalPos
+
+# fast build rule for target.
+detect_hog_globalPos/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_globalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_globalPos.dir/build
+.PHONY : detect_hog_globalPos/fast
 
 # Convenience name for target.
 detect_hog/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
@@ -600,101 +645,113 @@ detect_hog_geneus/fast:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_geneus.dir/build.make detect_hog/CMakeFiles/detect_hog_geneus.dir/build
 .PHONY : detect_hog_geneus/fast
 
-# Convenience name for target.
-detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
-.PHONY : detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
+src/detect_back.o: src/detect_back.cpp.o
 
-# Convenience name for target.
-detect_hog_generate_messages_lisp: detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
-
-.PHONY : detect_hog_generate_messages_lisp
-
-# fast build rule for target.
-detect_hog_generate_messages_lisp/fast:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/build.make detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/build
-.PHONY : detect_hog_generate_messages_lisp/fast
-
-src/detect.o: src/detect.cpp.o
-
-.PHONY : src/detect.o
+.PHONY : src/detect_back.o
 
 # target to build an object file
-src/detect.cpp.o:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_node.dir/build.make detect_hog/CMakeFiles/detect_hog_node.dir/src/detect.cpp.o
-.PHONY : src/detect.cpp.o
+src/detect_back.cpp.o:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_back.dir/build.make detect_hog/CMakeFiles/detect_hog_back.dir/src/detect_back.cpp.o
+.PHONY : src/detect_back.cpp.o
 
-src/detect.i: src/detect.cpp.i
+src/detect_back.i: src/detect_back.cpp.i
 
-.PHONY : src/detect.i
+.PHONY : src/detect_back.i
 
 # target to preprocess a source file
-src/detect.cpp.i:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_node.dir/build.make detect_hog/CMakeFiles/detect_hog_node.dir/src/detect.cpp.i
-.PHONY : src/detect.cpp.i
+src/detect_back.cpp.i:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_back.dir/build.make detect_hog/CMakeFiles/detect_hog_back.dir/src/detect_back.cpp.i
+.PHONY : src/detect_back.cpp.i
 
-src/detect.s: src/detect.cpp.s
+src/detect_back.s: src/detect_back.cpp.s
 
-.PHONY : src/detect.s
+.PHONY : src/detect_back.s
 
 # target to generate assembly for a file
-src/detect.cpp.s:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_node.dir/build.make detect_hog/CMakeFiles/detect_hog_node.dir/src/detect.cpp.s
-.PHONY : src/detect.cpp.s
+src/detect_back.cpp.s:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_back.dir/build.make detect_hog/CMakeFiles/detect_hog_back.dir/src/detect_back.cpp.s
+.PHONY : src/detect_back.cpp.s
 
-src/detect2.o: src/detect2.cpp.o
+src/detect_global.o: src/detect_global.cpp.o
 
-.PHONY : src/detect2.o
+.PHONY : src/detect_global.o
 
 # target to build an object file
-src/detect2.cpp.o:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/src/detect2.cpp.o
-.PHONY : src/detect2.cpp.o
+src/detect_global.cpp.o:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_globalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_globalPos.dir/src/detect_global.cpp.o
+.PHONY : src/detect_global.cpp.o
 
-src/detect2.i: src/detect2.cpp.i
+src/detect_global.i: src/detect_global.cpp.i
 
-.PHONY : src/detect2.i
+.PHONY : src/detect_global.i
 
 # target to preprocess a source file
-src/detect2.cpp.i:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/src/detect2.cpp.i
-.PHONY : src/detect2.cpp.i
+src/detect_global.cpp.i:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_globalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_globalPos.dir/src/detect_global.cpp.i
+.PHONY : src/detect_global.cpp.i
 
-src/detect2.s: src/detect2.cpp.s
+src/detect_global.s: src/detect_global.cpp.s
 
-.PHONY : src/detect2.s
+.PHONY : src/detect_global.s
 
 # target to generate assembly for a file
-src/detect2.cpp.s:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog2_node.dir/build.make detect_hog/CMakeFiles/detect_hog2_node.dir/src/detect2.cpp.s
-.PHONY : src/detect2.cpp.s
+src/detect_global.cpp.s:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_globalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_globalPos.dir/src/detect_global.cpp.s
+.PHONY : src/detect_global.cpp.s
 
-src/detect3.o: src/detect3.cpp.o
+src/detect_left.o: src/detect_left.cpp.o
 
-.PHONY : src/detect3.o
+.PHONY : src/detect_left.o
 
 # target to build an object file
-src/detect3.cpp.o:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/src/detect3.cpp.o
-.PHONY : src/detect3.cpp.o
+src/detect_left.cpp.o:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_left.dir/build.make detect_hog/CMakeFiles/detect_hog_left.dir/src/detect_left.cpp.o
+.PHONY : src/detect_left.cpp.o
 
-src/detect3.i: src/detect3.cpp.i
+src/detect_left.i: src/detect_left.cpp.i
 
-.PHONY : src/detect3.i
+.PHONY : src/detect_left.i
 
 # target to preprocess a source file
-src/detect3.cpp.i:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/src/detect3.cpp.i
-.PHONY : src/detect3.cpp.i
+src/detect_left.cpp.i:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_left.dir/build.make detect_hog/CMakeFiles/detect_hog_left.dir/src/detect_left.cpp.i
+.PHONY : src/detect_left.cpp.i
 
-src/detect3.s: src/detect3.cpp.s
+src/detect_left.s: src/detect_left.cpp.s
 
-.PHONY : src/detect3.s
+.PHONY : src/detect_left.s
 
 # target to generate assembly for a file
-src/detect3.cpp.s:
-	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog3_node.dir/build.make detect_hog/CMakeFiles/detect_hog3_node.dir/src/detect3.cpp.s
-.PHONY : src/detect3.cpp.s
+src/detect_left.cpp.s:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_left.dir/build.make detect_hog/CMakeFiles/detect_hog_left.dir/src/detect_left.cpp.s
+.PHONY : src/detect_left.cpp.s
+
+src/detect_right.o: src/detect_right.cpp.o
+
+.PHONY : src/detect_right.o
+
+# target to build an object file
+src/detect_right.cpp.o:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_right.dir/build.make detect_hog/CMakeFiles/detect_hog_right.dir/src/detect_right.cpp.o
+.PHONY : src/detect_right.cpp.o
+
+src/detect_right.i: src/detect_right.cpp.i
+
+.PHONY : src/detect_right.i
+
+# target to preprocess a source file
+src/detect_right.cpp.i:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_right.dir/build.make detect_hog/CMakeFiles/detect_hog_right.dir/src/detect_right.cpp.i
+.PHONY : src/detect_right.cpp.i
+
+src/detect_right.s: src/detect_right.cpp.s
+
+.PHONY : src/detect_right.s
+
+# target to generate assembly for a file
+src/detect_right.cpp.s:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_right.dir/build.make detect_hog/CMakeFiles/detect_hog_right.dir/src/detect_right.cpp.s
+.PHONY : src/detect_right.cpp.s
 
 # Help Target
 help:
@@ -704,25 +761,25 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... rebuild_cache"
+	@echo "... detect_hog_right"
 	@echo "... detect_hog_generate_messages_py"
 	@echo "... detect_hog_gennodejs"
 	@echo "... detect_hog_genlisp"
+	@echo "... detect_hog_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... detect_hog_generate_messages_cpp"
-	@echo "... detect_hog_node"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... detect_hog3_node"
+	@echo "... detect_hog_left"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_eus"
-	@echo "... detect_hog2_node"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
@@ -734,20 +791,25 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... detect_hog_generate_messages"
+	@echo "... detect_hog_back"
 	@echo "... detect_hog_gencpp"
+	@echo "... _detect_hog_generate_messages_check_deps_RobotCamGlobalPos"
+	@echo "... detect_hog_globalPos"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... _detect_hog_generate_messages_check_deps_RobotCamPos"
 	@echo "... detect_hog_geneus"
-	@echo "... detect_hog_generate_messages_lisp"
-	@echo "... src/detect.o"
-	@echo "... src/detect.i"
-	@echo "... src/detect.s"
-	@echo "... src/detect2.o"
-	@echo "... src/detect2.i"
-	@echo "... src/detect2.s"
-	@echo "... src/detect3.o"
-	@echo "... src/detect3.i"
-	@echo "... src/detect3.s"
+	@echo "... src/detect_back.o"
+	@echo "... src/detect_back.i"
+	@echo "... src/detect_back.s"
+	@echo "... src/detect_global.o"
+	@echo "... src/detect_global.i"
+	@echo "... src/detect_global.s"
+	@echo "... src/detect_left.o"
+	@echo "... src/detect_left.i"
+	@echo "... src/detect_left.s"
+	@echo "... src/detect_right.o"
+	@echo "... src/detect_right.i"
+	@echo "... src/detect_right.s"
 .PHONY : help
 
 

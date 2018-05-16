@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg"
+messages_str = "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg;/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg"
 services_str = ""
 pkg_name = "detect_hog"
 dependencies_str = "std_msgs"

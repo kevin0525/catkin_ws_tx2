@@ -202,9 +202,9 @@ detect_hog::RobotCamPos reset_detectState(detect_hog::RobotCamPos rcp){
 }
 
 int main(int argc, char **argv) {
-  ros::init(argc, argv, "detect3");
+  ros::init(argc, argv, "detect_hog_left");
   ros::NodeHandle n; 
-  ros::Publisher msg_pub = n.advertise<detect_hog::RobotCamPos>("robot_cam_position_3",10);
+  ros::Publisher msg_pub = n.advertise<detect_hog::RobotCamPos>("/robot_cam_position_left",10);
   detect_hog::RobotCamPos rcp;
   int rob_pub_num=0;
   rcp=init_detectState(rcp);

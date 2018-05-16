@@ -1,0 +1,3 @@
+bool left_exist_rob_flag
+bool right_exist_rob_flag
+bool back_exist_rob_flag

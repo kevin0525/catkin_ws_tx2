@@ -33,7 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/detect_hog/msg" TYPE FILE FILES "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/detect_hog/msg" TYPE FILE FILES
+    "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg"
+    "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

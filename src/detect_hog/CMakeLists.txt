@@ -13,6 +13,7 @@ find_package(OpenCV REQUIRED)
 add_message_files(
   FILES
   RobotCamPos.msg
+  RobotCamGlobalPos.msg
 )
 
 generate_messages(
@@ -32,23 +33,31 @@ include_directories(
 )
 
 
-add_executable(${PROJECT_NAME}_node src/detect.cpp)
+add_executable(${PROJECT_NAME}_left src/detect_left.cpp)
 
-target_link_libraries(${PROJECT_NAME}_node
+target_link_libraries(${PROJECT_NAME}_left
   ${catkin_LIBRARIES}
   ${OpenCV_LIBS}
 )
 
-add_executable(${PROJECT_NAME}2_node src/detect2.cpp)
+add_executable(${PROJECT_NAME}_back src/detect_back.cpp)
 
-target_link_libraries(${PROJECT_NAME}2_node
+target_link_libraries(${PROJECT_NAME}_back
   ${catkin_LIBRARIES}
   ${OpenCV_LIBS}
 )
 
-add_executable(${PROJECT_NAME}3_node src/detect3.cpp)
+add_executable(${PROJECT_NAME}_right src/detect_right.cpp)
 
-target_link_libraries(${PROJECT_NAME}3_node
+target_link_libraries(${PROJECT_NAME}_right
   ${catkin_LIBRARIES}
   ${OpenCV_LIBS}
 )
+
+add_executable(${PROJECT_NAME}_globalPos src/detect_global.cpp)
+
+target_link_libraries(${PROJECT_NAME}_globalPos
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+)
+

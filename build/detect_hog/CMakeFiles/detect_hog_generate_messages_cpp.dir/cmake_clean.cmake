@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/detect_hog_generate_messages_cpp"
+  "/home/nvidia/catkin_tx2/devel/include/detect_hog/RobotCamGlobalPos.h"
   "/home/nvidia/catkin_tx2/devel/include/detect_hog/RobotCamPos.h"
 )
 

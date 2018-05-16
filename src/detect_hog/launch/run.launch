@@ -1,8 +1,9 @@
 <launch>
 <group ns="detect">
-<node pkg = "detect_hog" name="detect1" type="detect_hog_node"/>
-<node pkg = "detect_hog" name="detect2" type="detect_hog2_node"/>
-<node pkg = "detect_hog" name="detect3" type="detect_hog3_node"/>
+<node pkg = "detect_hog" name="detect_back" type="detect_hog_back"/>
+<node pkg = "detect_hog" name="detect_left" type="detect_hog_left"/>
+<node pkg = "detect_hog" name="detect_right" type="detect_hog_right"/>
+<node pkg = "detect_hog" name="detect_global" type="detect_hog_globalPos"/>
 </group>
 </launch>
 

@@ -53,15 +53,22 @@ CMAKE_BINARY_DIR = /home/nvidia/catkin_tx2/build
 # Include the progress variables for this target.
 include detect_hog/CMakeFiles/detect_hog_generate_messages_nodejs.dir/progress.make
 
+detect_hog/CMakeFiles/detect_hog_generate_messages_nodejs: /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamGlobalPos.js
 detect_hog/CMakeFiles/detect_hog_generate_messages_nodejs: /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamPos.js
 
 
+/home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamGlobalPos.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
+/home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamGlobalPos.js: /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from detect_hog/RobotCamGlobalPos.msg"
+	cd /home/nvidia/catkin_tx2/build/detect_hog && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg -Idetect_hog:/home/nvidia/catkin_tx2/src/detect_hog/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p detect_hog -o /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg
+
 /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamPos.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
 /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamPos.js: /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from detect_hog/RobotCamPos.msg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/nvidia/catkin_tx2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from detect_hog/RobotCamPos.msg"
 	cd /home/nvidia/catkin_tx2/build/detect_hog && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg -Idetect_hog:/home/nvidia/catkin_tx2/src/detect_hog/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p detect_hog -o /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg
 
 detect_hog_generate_messages_nodejs: detect_hog/CMakeFiles/detect_hog_generate_messages_nodejs
+detect_hog_generate_messages_nodejs: /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamGlobalPos.js
 detect_hog_generate_messages_nodejs: /home/nvidia/catkin_tx2/devel/share/gennodejs/ros/detect_hog/msg/RobotCamPos.js
 detect_hog_generate_messages_nodejs: detect_hog/CMakeFiles/detect_hog_generate_messages_nodejs.dir/build.make
 

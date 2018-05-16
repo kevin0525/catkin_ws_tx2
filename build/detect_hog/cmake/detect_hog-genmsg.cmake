@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "detect_hog: 1 messages, 0 services")
+message(STATUS "detect_hog: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Idetect_hog:/home/nvidia/catkin_tx2/src/detect_hog/msg;-Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg")
 
@@ -17,6 +17,11 @@ add_custom_target(detect_hog_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg" NAME_WE)
+add_custom_target(_detect_hog_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "detect_hog" "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg" ""
+)
+
 get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg" NAME_WE)
 add_custom_target(_detect_hog_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "detect_hog" "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg" ""
@@ -28,6 +33,12 @@ add_custom_target(_detect_hog_generate_messages_check_deps_${_filename}
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(detect_hog
+  "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/detect_hog
+)
 _generate_msg_cpp(detect_hog
   "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg"
   "${MSG_I_FLAGS}"
@@ -49,6 +60,8 @@ add_custom_target(detect_hog_generate_messages_cpp
 add_dependencies(detect_hog_generate_messages detect_hog_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg" NAME_WE)
+add_dependencies(detect_hog_generate_messages_cpp _detect_hog_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg" NAME_WE)
 add_dependencies(detect_hog_generate_messages_cpp _detect_hog_generate_messages_check_deps_${_filename})
 
@@ -61,6 +74,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS detect_hog_generate_messages_cpp)
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(detect_hog
+  "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/detect_hog
+)
 _generate_msg_eus(detect_hog
   "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg"
   "${MSG_I_FLAGS}"
@@ -82,6 +101,8 @@ add_custom_target(detect_hog_generate_messages_eus
 add_dependencies(detect_hog_generate_messages detect_hog_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg" NAME_WE)
+add_dependencies(detect_hog_generate_messages_eus _detect_hog_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg" NAME_WE)
 add_dependencies(detect_hog_generate_messages_eus _detect_hog_generate_messages_check_deps_${_filename})
 
@@ -94,6 +115,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS detect_hog_generate_messages_eus)
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(detect_hog
+  "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/detect_hog
+)
 _generate_msg_lisp(detect_hog
   "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg"
   "${MSG_I_FLAGS}"
@@ -115,6 +142,8 @@ add_custom_target(detect_hog_generate_messages_lisp
 add_dependencies(detect_hog_generate_messages detect_hog_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg" NAME_WE)
+add_dependencies(detect_hog_generate_messages_lisp _detect_hog_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg" NAME_WE)
 add_dependencies(detect_hog_generate_messages_lisp _detect_hog_generate_messages_check_deps_${_filename})
 
@@ -127,6 +156,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS detect_hog_generate_messages_lisp)
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(detect_hog
+  "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/detect_hog
+)
 _generate_msg_nodejs(detect_hog
   "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg"
   "${MSG_I_FLAGS}"
@@ -148,6 +183,8 @@ add_custom_target(detect_hog_generate_messages_nodejs
 add_dependencies(detect_hog_generate_messages detect_hog_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg" NAME_WE)
+add_dependencies(detect_hog_generate_messages_nodejs _detect_hog_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg" NAME_WE)
 add_dependencies(detect_hog_generate_messages_nodejs _detect_hog_generate_messages_check_deps_${_filename})
 
@@ -160,6 +197,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS detect_hog_generate_messages_nodejs
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(detect_hog
+  "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/detect_hog
+)
 _generate_msg_py(detect_hog
   "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg"
   "${MSG_I_FLAGS}"
@@ -181,6 +224,8 @@ add_custom_target(detect_hog_generate_messages_py
 add_dependencies(detect_hog_generate_messages detect_hog_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamGlobalPos.msg" NAME_WE)
+add_dependencies(detect_hog_generate_messages_py _detect_hog_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/nvidia/catkin_tx2/src/detect_hog/msg/RobotCamPos.msg" NAME_WE)
 add_dependencies(detect_hog_generate_messages_py _detect_hog_generate_messages_check_deps_${_filename})
 
