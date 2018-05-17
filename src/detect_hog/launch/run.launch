@@ -2,7 +2,7 @@
 <group ns="detect">
 <node pkg = "detect_hog" name="detect_back" type="detect_hog_back"/>
 <node pkg = "detect_hog" name="detect_left" type="detect_hog_left"/>
-<node pkg = "detect_hog" name="detect_right" type="detect_hog_right"/>
+
 <node pkg = "detect_hog" name="detect_global" type="detect_hog_globalPos"/>
 </group>
 </launch>

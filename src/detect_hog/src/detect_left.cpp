@@ -212,7 +212,7 @@ int main(int argc, char **argv) {
   //load parameter
 
   ifstream launchFile;
-  string launchFilelocation = string(FILEPATH)+"launch.txt";
+  string launchFilelocation = string(FILEPATH)+"launch_left.txt";
   launchFile.open(launchFilelocation);
   string firstLine;
   getline(launchFile, firstLine);
@@ -249,6 +249,7 @@ int main(int argc, char **argv) {
   ss >> scale0;
   
   VideoCapture capture(videostreamlocation);
+  //VideoCapture capture(2);
   //if(!videoorcamera)  VideoCapture capture(0); 
   if (!capture.isOpened())  
   {  

@@ -7,10 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/nvidia/catkin_tx2/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/nvidia/catkin_tx2/devel/lib:/opt/ros/kinetic/lib:/usr/local/cuda/lib64"
-export PKG_CONFIG_PATH="/home/nvidia/catkin_tx2/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/nvidia/catkin_tx2/build"
-export PYTHONPATH="/home/nvidia/catkin_tx2/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/nvidia/catkin_tx2/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/nvidia/catkin_tx2/src:$ROS_PACKAGE_PATH"

@@ -234,6 +234,12 @@ Project_SOURCE_DIR:STATIC=/home/nvidia/catkin_tx2/src
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/aarch64-linux-gnu/librt.so
 
+//Value Computed by CMake
+ReadMutipleCam_BINARY_DIR:STATIC=/home/nvidia/catkin_tx2/build/ReadMutipleCam
+
+//Value Computed by CMake
+ReadMutipleCam_SOURCE_DIR:STATIC=/home/nvidia/catkin_tx2/src/ReadMutipleCam
+
 //Enable debian style python package layout
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
@@ -312,6 +318,9 @@ message_generation_DIR:PATH=/opt/ros/kinetic/share/message_generation/cmake
 
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/kinetic/share/message_runtime/cmake
+
+//The directory containing a CMake configuration file for ros_msgs.
+ros_msgs_DIR:PATH=ros_msgs_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/kinetic/share/rosconsole/cmake

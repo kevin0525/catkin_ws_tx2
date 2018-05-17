@@ -73,7 +73,7 @@ int main(int argc, char **argv) {
   //load parameter
 
   ifstream launchFile;
-  string launchFilelocation = string(FILEPATH)+"launch.txt";
+  string launchFilelocation = string(FILEPATH)+"launch_back.txt";
   launchFile.open(launchFilelocation);
   string firstLine;
   getline(launchFile, firstLine);
@@ -108,8 +108,8 @@ int main(int argc, char **argv) {
   ss >> win_stride;
   ss >> scale0;
   
-  VideoCapture capture(videostreamlocation);
-  //if(!videoorcamera)  VideoCapture capture(0); 
+  //VideoCapture capture(videostreamlocation);
+  VideoCapture capture(0); 
   if (!capture.isOpened())  
   {  
       cout << "error" << endl;  
@@ -120,7 +120,7 @@ int main(int argc, char **argv) {
   int h_kevin = capture.get(CV_CAP_PROP_FRAME_HEIGHT);
   w_kevin=w_kevin/ResizeOriginTimes;
   h_kevin=h_kevin/ResizeOriginTimes;
-
+  cout<< w_kevin <<" "<<h_kevin<<endl;
   double rate = capture.get(CV_CAP_PROP_FPS);
   VideoWriter writer(string(FILEPATH) +resultvideolocation, CV_FOURCC('M', 'J', 'P', 'G'), rate, Size(w_kevin, h_kevin), true);
   if (!writer.isOpened())
@@ -223,7 +223,7 @@ int main(int argc, char **argv) {
 	  
 	  t = (double)getTickCount() - t;
 	  //printf("detection time = %gms\n", t*1000. / cv::getTickFrequency());
-	  cout << 1000 / (t*1000. / cv::getTickFrequency()) << endl;
+	  //cout << 1000 / (t*1000. / cv::getTickFrequency()) << endl;
 	  
   }
   if (f)  fclose(f);
