@@ -89,6 +89,11 @@ int main(int argc, char **argv) {
   int ifWritePartImg;
   string partImg_ex;
   int videoorcamera;
+  float ResizeOriginTimes;
+  int block_stride;
+  int win_stride;
+  float scale0;
+  
   ss >> videostreamlocation;
   ss >> resultvideolocation;
   ss >> HOG_SVMtxtlocation;
@@ -98,6 +103,11 @@ int main(int argc, char **argv) {
   ss >> ifWritePartImg;
   ss >> partImg_ex;
   ss >> videoorcamera;
+  ss >> ResizeOriginTimes;
+  ss >> block_stride;
+  ss >> win_stride;
+  ss >> scale0;  
+  
   
   VideoCapture capture(videostreamlocation);
   //if(!videoorcamera)  VideoCapture capture(0); 
@@ -109,6 +119,8 @@ int main(int argc, char **argv) {
   } 
   int w_kevin = capture.get(CV_CAP_PROP_FRAME_WIDTH);
   int h_kevin = capture.get(CV_CAP_PROP_FRAME_HEIGHT);
+  w_kevin=w_kevin/ResizeOriginTimes;
+  h_kevin=h_kevin/ResizeOriginTimes;
     
   double rate = capture.get(CV_CAP_PROP_FPS);
   VideoWriter writer(string(FILEPATH) +resultvideolocation, CV_FOURCC('M', 'J', 'P', 'G'), rate, Size(w_kevin, h_kevin), true);
@@ -135,22 +147,20 @@ int main(int argc, char **argv) {
   }
   fileIn.close();
 
-  HOGDescriptor hog(cvSize(64, 64), cvSize(16, 16), cvSize(8, 8), cvSize(8, 8), 9);
+  HOGDescriptor hog(cvSize(64, 64), cvSize(16, 16), cvSize(block_stride, block_stride), cvSize(8, 8), 9);
   hog.setSVMDetector(detector);
   //cout << "set HOG done" << endl;
 
   while (capture.isOpened())
   {
+          double t = (double)getTickCount();
+	  
 	  capture >> img;
 	  if (img.empty()) break;
 	  fflush(stdout);
 	  vector<Rect> found, found_filtered;
-	  double t = (double)getTickCount();
 	  resize(img, img, Size(w_kevin, h_kevin));
-	  hog.detectMultiScale(img, found, 0, Size(8, 8), Size(0, 0), 1.05, 2);
-	  t = (double)getTickCount() - t;
-	  //printf("detection time = %gms\n", t*1000. / cv::getTickFrequency());
-	  cout << 1000 / (t*1000. / cv::getTickFrequency()) << endl;
+	  hog.detectMultiScale(img, found, 0, Size(win_stride, win_stride), Size(0, 0), scale0, 2);
 	  
 	  size_t i, j;
 
@@ -210,6 +220,10 @@ int main(int argc, char **argv) {
 	  int key = waitKey(30);
 	  if (key == 'q' || key == 'Q' || key == 27)
 		  break;
+	  
+	  t = (double)getTickCount() - t;
+	  //printf("detection time = %gms\n", t*1000. / cv::getTickFrequency());
+	  cout << 1000 / (t*1000. / cv::getTickFrequency()) << endl;
 	  
   }
   if (f)  fclose(f);

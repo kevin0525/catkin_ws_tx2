@@ -1,8 +1,0 @@
-prefix=/home/nvidia/catkin_tx2/install
-
-Name: detect_hog_2
-Description: Description of detect_hog_2
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/nvidia/catkin_tx2/install/lib 
-Requires: 

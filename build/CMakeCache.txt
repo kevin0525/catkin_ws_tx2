@@ -256,18 +256,6 @@ catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
 cpp_common_DIR:PATH=/opt/ros/kinetic/share/cpp_common/cmake
 
 //Value Computed by CMake
-detect_hog_2_BINARY_DIR:STATIC=/home/nvidia/catkin_tx2/build/detect_hog_2
-
-//Value Computed by CMake
-detect_hog_2_SOURCE_DIR:STATIC=/home/nvidia/catkin_tx2/src/detect_hog_2
-
-//Value Computed by CMake
-detect_hog_3_BINARY_DIR:STATIC=/home/nvidia/catkin_tx2/build/detect_hog_3
-
-//Value Computed by CMake
-detect_hog_3_SOURCE_DIR:STATIC=/home/nvidia/catkin_tx2/src/detect_hog_3
-
-//Value Computed by CMake
 detect_hog_BINARY_DIR:STATIC=/home/nvidia/catkin_tx2/build/detect_hog
 
 //Value Computed by CMake
