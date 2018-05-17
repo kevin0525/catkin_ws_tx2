@@ -30,6 +30,7 @@
 /home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/detect_hog_generate_messages_py.dir
 /home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/detect_hog_gennodejs.dir
 /home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/detect_hog_genlisp.dir
+/home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/detect_hog_readGloalPos.dir
 /home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir
 /home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/nvidia/catkin_tx2/build/detect_hog/CMakeFiles/detect_hog_generate_messages_cpp.dir

@@ -309,6 +309,19 @@ detect_hog_genlisp/fast:
 .PHONY : detect_hog_genlisp/fast
 
 #=============================================================================
+# Target rules for targets named detect_hog_readGloalPos
+
+# Build rule for target.
+detect_hog_readGloalPos: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 detect_hog_readGloalPos
+.PHONY : detect_hog_readGloalPos
+
+# fast build rule for target.
+detect_hog_readGloalPos/fast:
+	$(MAKE) -f detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/build
+.PHONY : detect_hog_readGloalPos/fast
+
+#=============================================================================
 # Target rules for targets named detect_hog_generate_messages_lisp
 
 # Build rule for target.
@@ -696,6 +709,7 @@ help:
 	@echo "... detect_hog_generate_messages_py"
 	@echo "... detect_hog_gennodejs"
 	@echo "... detect_hog_genlisp"
+	@echo "... detect_hog_readGloalPos"
 	@echo "... detect_hog_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... detect_hog_generate_messages_cpp"

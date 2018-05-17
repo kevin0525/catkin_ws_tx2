@@ -226,6 +226,21 @@ detect_hog_genlisp/fast:
 .PHONY : detect_hog_genlisp/fast
 
 # Convenience name for target.
+detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/rule:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/rule
+.PHONY : detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/rule
+
+# Convenience name for target.
+detect_hog_readGloalPos: detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/rule
+
+.PHONY : detect_hog_readGloalPos
+
+# fast build rule for target.
+detect_hog_readGloalPos/fast:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/build
+.PHONY : detect_hog_readGloalPos/fast
+
+# Convenience name for target.
 detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f CMakeFiles/Makefile2 detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
 .PHONY : detect_hog/CMakeFiles/detect_hog_generate_messages_lisp.dir/rule
@@ -753,6 +768,33 @@ src/detect_right.cpp.s:
 	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_right.dir/build.make detect_hog/CMakeFiles/detect_hog_right.dir/src/detect_right.cpp.s
 .PHONY : src/detect_right.cpp.s
 
+src/read_globalPos.o: src/read_globalPos.cpp.o
+
+.PHONY : src/read_globalPos.o
+
+# target to build an object file
+src/read_globalPos.cpp.o:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/src/read_globalPos.cpp.o
+.PHONY : src/read_globalPos.cpp.o
+
+src/read_globalPos.i: src/read_globalPos.cpp.i
+
+.PHONY : src/read_globalPos.i
+
+# target to preprocess a source file
+src/read_globalPos.cpp.i:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/src/read_globalPos.cpp.i
+.PHONY : src/read_globalPos.cpp.i
+
+src/read_globalPos.s: src/read_globalPos.cpp.s
+
+.PHONY : src/read_globalPos.s
+
+# target to generate assembly for a file
+src/read_globalPos.cpp.s:
+	cd /home/nvidia/catkin_tx2/build && $(MAKE) -f detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/build.make detect_hog/CMakeFiles/detect_hog_readGloalPos.dir/src/read_globalPos.cpp.s
+.PHONY : src/read_globalPos.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -770,6 +812,7 @@ help:
 	@echo "... detect_hog_generate_messages_py"
 	@echo "... detect_hog_gennodejs"
 	@echo "... detect_hog_genlisp"
+	@echo "... detect_hog_readGloalPos"
 	@echo "... detect_hog_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... detect_hog_generate_messages_cpp"
@@ -810,6 +853,9 @@ help:
 	@echo "... src/detect_right.o"
 	@echo "... src/detect_right.i"
 	@echo "... src/detect_right.s"
+	@echo "... src/read_globalPos.o"
+	@echo "... src/read_globalPos.i"
+	@echo "... src/read_globalPos.s"
 .PHONY : help
 
 

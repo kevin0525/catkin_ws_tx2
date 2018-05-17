@@ -61,3 +61,10 @@ target_link_libraries(${PROJECT_NAME}_globalPos
   ${OpenCV_LIBS}
 )
 
+add_executable(${PROJECT_NAME}_readGloalPos src/read_globalPos.cpp)
+
+target_link_libraries(${PROJECT_NAME}_readGloalPos
+  ${catkin_LIBRARIES}
+  ${OpenCV_LIBS}
+)
+
